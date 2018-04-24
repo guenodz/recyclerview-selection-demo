@@ -1,6 +1,7 @@
 package me.guendouz.recyclerview_item_selection;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -109,5 +110,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (savedInstanceState != null)
+            mSelectionTracker.onRestoreInstanceState(savedInstanceState);
+
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mSelectionTracker.onSaveInstanceState(outState);
+    }
+
 }
