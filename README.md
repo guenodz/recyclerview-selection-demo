@@ -1,0 +1,1 @@
+A simple Android project that demonstrates the usage of the new **androidx.recyclerview.selection**support library
